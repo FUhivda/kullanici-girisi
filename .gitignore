@@ -1,23 +1,34 @@
-# Compiled class file
-*.class
+import java.util.Scanner;
+public class kullaniciGirisi {
+    public static void main(String[] args){
+        String userName,password,newPassword,answer;
 
-# Log file
-*.log
+        Scanner input=new Scanner(System.in);
+        System.out.print("Kullanıcı Adınızı Giriniz: ");
+        userName= input.nextLine();
+        System.out.print("Şifrenizi Giriniz: ");
+        password= input.nextLine();
 
-# BlueJ files
-*.ctxt
+        if(userName.equals("patika") && password.equals("java123")) {
+            System.out.println("Giriş Yaptınız !");
+        } else {
+            System.out.println("Hatalı Giriş Yaptınız.Şifrenizi Değiştirmek İster Misiniz? (Evet/Hayır): ");
+            answer= input.nextLine();
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+             if(answer.equals("Evet")) {
+                 System.out.println("Yeni Şifreyi Giriniz: ");
+                 newPassword = input.nextLine();
+                 input.close();
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+              if (!newPassword.equals("java123")) {
+                  System.out.println("Şifre Oluşturuldu.");
+              } else {
+                  System.out.println("Şifre Oluşturulamadı.Lütfen Başka Şifre Giriniz. ");
+              }
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+                 
+             }
+        }
+
+    }
+}
